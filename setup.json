@@ -1,0 +1,32 @@
+{
+    "author": "Hossein Mirhosseini",
+    "author_email": "mirhoseini@gmail.com",
+    "description": "AiiDA Plugin for training data generation",
+    "license": "",
+    "name": "aiida-datagen",
+    "url": "https://github.com/hmhoseini/aiida-datagen",
+    "version": "0.0",
+    "license": "MIT license",
+    "reentry_register": true,
+    "python_requires": ">=3.6",
+    "install_requires": [
+        "aiida-submission-controller", "mp-api", "pyxtal"
+    ],
+    "entry_points": {
+	"aiida.calculations": [
+	    "flame = aiida_datagen.codes.flame.flame_calculations:FlameCalculation"
+	],
+	"aiida.parsers": [
+	    "cp2k_efs_parser = aiida_datagen.codes.cp2k.cp2k_parsers:Cp2kEFSParser",
+            "cp2k_simple_parser = aiida_datagen.codes.cp2k.cp2k_parsers:Cp2kSimpleParser",
+            "datagene_gensymcrys_parser = aiida_datagen.codes.flame.flame_parsers: GenSymCrysParser",
+            "datagen_averdist_parser = aiida_datagen.codes.flame.flame_parsers: AverDistParser",
+	    "dategen_train_parser = aiida_datagen.codes.flame.flame_parsers: TrainParser",
+	    "datagen_minhocao_parser = aiida_datagen.codes.flame.flame_parsers: MinhocaoParser",
+	    "datagen_minhopp_parser = aiida_datagen.codes.flame.flame_parsers: MinhoppParser",
+	    "datagen_divcheck_parser = aiida_datagen.codes.flame.flame_parsers: DivCheckParser",
+            "datagen_SP_parser = aiida_datagen.codes.flame.flame_parsers: SPParser"
+	],
+	"aiida.workflows": []
+    }
+}
